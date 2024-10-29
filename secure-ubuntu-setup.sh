@@ -64,16 +64,6 @@ apt install -y wget || {
 echo "Setting up user directory..."
 su - "$USER" -c 'mkdir -p ~/Documents'
 
-# Download client software
-echo "Downloading client software..."
-wget https://api.rivalz.ai/fragmentz/clients/rClient-latest.AppImage -O "/home/$USER/Documents/rClient-latest.AppImage" || {
-    echo "Failed to download client software"
-    exit 1
-}
-
-# Set permissions
-chown "$USER:$USER" "/home/$USER/Documents/rClient-latest.AppImage"
-chmod +x "/home/$USER/Documents/rClient-latest.AppImage"
 
 echo "Setup complete! Please test the remote connection."
 echo "Your username is: $USER"
